@@ -2,11 +2,18 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from '../pages/HomeView.vue'
 import Lab from '../pages/LabView.vue'
 import Resume from '../pages/ResumeView.vue'
+import Details from '../pages/Details.vue'
 
 const routes = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        children: [
+            {
+                path: '/details/:id',
+                component: Details
+            }
+        ]
     },
     {
         path: '/lab',
